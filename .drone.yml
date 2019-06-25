@@ -2,4 +2,4 @@ pipeline:
   build:
     image: plugins/docker
     commands:
-      - docker build -t gcr.io/principal-iris-230413/bookshelf
+      - docker build -t gcr.io/principal-iris-230413/bookshelf .
