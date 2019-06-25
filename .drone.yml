@@ -1,5 +1,9 @@
-pipeline:
-  build:
-    image: plugins/docker
-    commands:
-      - docker build -t gcr.io/principal-iris-230413/bookshelf .
+kine: pipeline
+name: default
+
+steps:
+- name: docker
+  image: plugins/docker
+  settings:
+    tags:
+      - gcr.io/principal-iris-230413/bookshelf
