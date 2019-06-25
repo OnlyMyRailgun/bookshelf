@@ -3,7 +3,13 @@ name: default
 
 steps:
 - name: docker
-  image: plugins/docker
+  image: plugins/gcr
   settings:
+    repo: principal-iris-230413/bookshelf
     tags:
-      - gcr.io/principal-iris-230413/bookshelf
+      - latest
+      - "${DRONE_COMMIT}"
+    json_key:
+      from_secret: google_credentials
+  when:
+    event: push
